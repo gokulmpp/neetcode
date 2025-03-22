@@ -6,6 +6,6 @@ public class ContainsDuplicate {
     }
 
     public boolean hasDuplicate(int[] nums) {
-        return false;
+        return true;
     }
 }
