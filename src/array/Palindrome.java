@@ -15,7 +15,7 @@ public class Palindrome {
 
     public static void main(String[] args) {
         Palindrome p=new Palindrome();
-        String s="Was it a car or a cat I saw?";
+        String s="Was it a car or a cat I saw";
         p.isPalindrome(s);
     }
 }
