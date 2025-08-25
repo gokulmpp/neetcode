@@ -1,27 +1,24 @@
 package array;
 
+import java.util.Stack;
+
 public class validparenthesis {
     public static void main(String[] args) {
        String s="{[()]}";
-        System.out.println(validparenthesis(s));
+        System.out.println(validparen(s));
     }
-    public static boolean validparenthesis(String s) {
-        while(true) {
-            if(s.contains("()"))
-            {
-                s=s.replace("()","");
+    public static boolean validparen(String s) {
+        Stack<Character> st = new Stack<>();
+        for(char c:s.toCharArray()){
+            if(c=='{'||c=='['||c=='('){
+                st.push(c);
             }
-            else if(s.contains("[]"))
-            {
-                s=s.replace("[]","");
+            else if(c=='}'||c==']'||c==')'){
+                if(st.isEmpty()) return false;
+                if(c=='}'&&st.pop()!='{'||c==']'&&st.pop()!='['||c==')'&&st.pop()!='(')
+                    return false;
             }
-            else if(s.contains("{}"))
-            {
-               s= s.replace("[]","");
-            }
-            else {
-                return s.isEmpty();
-            }
-        }
+
+        }return st.isEmpty();
     }
 }
